@@ -1,0 +1,344 @@
+
+/* Tab cá nhân */
+.user {
+   position: relative;
+   padding-bottom: 40px;
+}
+
+.select-tab {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: flex;  
+}
+.btn {
+    padding: 6px 20px;
+    background-color: var(--alpha-bg1);
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 100;
+    color: var(--white);
+    cursor: pointer;
+    margin-right: 10px;
+    
+}
+.btn.case.case-all {
+    text-decoration: none;
+} 
+.btn.btn-update {
+     background-color: #ffdb00;
+     color: var(--black);
+}
+.btn-dots {
+    width: 26.55px;
+    height: 26.55px;
+    background-color: var(--alpha-bg1);
+    text-align: center;
+    border-radius: 100%;
+}
+/* pHẦN AVATar và tên */
+.user-main {
+    text-align: center;
+}
+.user-main-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-avt {
+    width: 95px;
+    height: 95px;
+    border-radius: 100%;
+    background-size: contain;
+    background-image: url(../img_main/avatar_jisoo.jpg);
+   
+}
+.user-main-name {
+    font-size: 32px;
+    color: var(--white);
+    margin: 10px 0;
+}
+.user-navbar-contain {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+}
+.user-navbar {
+    display: flex;
+    justify-content: center;
+    background-color: var(--alpha-bg1);
+    border-radius: 14px;
+
+}
+.user-navbar .btn {
+    background-color: transparent;
+
+}
+.user-navbar-item {
+    text-decoration: none;
+}
+.btn.user-navbar-item {
+    margin-right: 0;
+}
+.user-navbar .btn.active1 {
+    background-color: var(--alpha-layout-bg);
+}
+
+
+
+
+/* Tab tổng quan */
+/* Bài hát,tất cả, tải lên, phát tấT cả */
+#main-stt1 {
+    
+}
+.main-stt1-heading {
+    display: flex;
+    justify-content: space-between;
+}
+.header-sound {
+    font-size: 20px;
+    color: var(--white);
+    font-weight: 600;
+}
+.main-stt1-switch {
+    display: flex;
+    
+}
+.main-stt1-switch .case i {
+    margin: 0 5px;
+}
+.case {
+    display: flex;
+    align-items: center;
+}
+.case-play-all {
+    background-color: var(--purple-primary) ;
+}
+.main-stt1-contain {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.img-events {
+    width: 230px;
+    height: 230px;
+    border-radius: 5px;
+}
+.main-stt1-song-list {
+    flex: 1;
+    margin-left: 20px;
+    height: 244px;
+    overflow: auto;
+}
+.main-stt1-song-list::-webkit-scrollbar {
+    width: 3px;
+} 
+.main-stt1-song-list::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(117deg,#af0a78,#5a035a 102%);
+    border-radius: 2px;
+    display: none;
+}
+.main-stt1-song-list::-webkit-scrollbar-track {
+   border-radius: 2px;
+   display: none;
+   background-color: rgb(214, 223, 141);
+}
+.main-stt1-song-list:hover::-webkit-scrollbar-thumb {
+    display: block;
+}
+.main-stt1-song-list:hover::-webkit-scrollbar-track {
+   display: block;
+}
+.stt1-song-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 1px solid var(--border-secondary);
+    border-radius: 3px;
+    cursor: pointer;
+}
+.stt1-song-item:hover {
+    background-color: var(--alpha-bg1);
+}
+.stt1-song-item.active2 {
+    background-color: var(--alpha-bg1);
+}
+.song-item-left,
+.song-item-right {
+    display: flex;
+    align-items: center;
+}
+.song-item-left {
+    min-width: 200px;
+    max-width: 250px;
+    overflow-x: auto;
+}
+.song-item-avatar {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.song-item-avatar .song-item-icon-pause {
+    color: var(--white);
+    font-size: 24px;
+    display: none;
+}
+.stt1-song-item:hover .song-item-icon-pause {
+    display: block;
+}
+.gif {
+    width: 18px;
+    height: 18px;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.song-item-properti {
+    
+}
+.song-item-properti-name {
+    font-size: 14px;
+    color: var(--white);
+    overflow: hidden;
+    max-width: 150px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.song-item-properti-single {
+    font-size: 12px;
+    color: var(--dada);
+}
+.song-item-name-album {
+    font-size: 12px;
+    min-width: 200px;
+    color: var(--song-item-action);
+    text-align: left;
+
+}
+.reaction i {
+    color: var(--purple-primary);
+    padding: 6px;
+    margin: 0 4px;
+}
+.song-times {
+    color: var(--dada);
+    font-size: 12px;
+    padding: 0 6px;
+}
+.main-stt1-bottom {
+    padding-top: 50px;
+    margin-bottom: 30px;
+
+}
+.main-stt1-bottom-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+.main-stt1-bottom-heading .name-playlist {
+    font-size: 20px;
+}
+.main-stt1-bottom-heading .name-all {
+    font-size: 16px;
+    color: var(--dada);
+    display: flex;
+    align-items: center;
+}
+.name-all .name-all-icon {
+    margin-left: 5px;
+}
+
+.add-playlist-new {
+    background: linear-gradient(33deg,#5a1eae -7%,#ce267a 117%);
+    width: 206px;
+    height: 206px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.add-playlist-new:hover {
+    opacity: 0.8;
+}
+.add-play-new-contain {
+    color: var(--white);
+}
+.add-playlist-new-icon {
+    font-size: 47px;
+    text-align: center;
+}
+.add-playlistnew-text{
+    color: 14px;
+}
+
+
+
+/* Tab bài hát */
+#main-stt2 {
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+.main-stt2-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    border-bottom: 1px solid var(--border-secondary);
+
+}
+.main-stt2-heading-item {
+    font-size: 12px;
+    color: var(--song-item-action);
+}
+
+
+/* Podcast */
+.podcast {
+    text-align: center;
+
+}
+.podcast-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.podcast-icon .icon {
+    background-image: url(	https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/icons/record-dark.svg);
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.my-podcast {
+    color: var(--song-item-action);
+    font-size: 20px;
+    margin: 16px 0 24px 0;
+    font-weight: 500;
+}
+.btn-podcast {
+    padding: 9px 24px;
+    font-size: 18px;
+    margin-top: 20px;
+    color: var(--white);
+    background-color: var(--purple-primary);
+    border-radius: 26px;
+    cursor: pointer;
+    display: inline-block;
+
+}
+.btn-podcast:hover {
+    opacity: 0.8;
+}

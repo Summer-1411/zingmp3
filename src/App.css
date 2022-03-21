@@ -1,38 +1,48 @@
-.App {
-  text-align: center;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --sidebar-bg1: hsla(0,0%,100%,0.05);
+    --vip1: (117deg,#5a4be7,#c86dd7 102%);
+    --alpha-bg1: hsla(0,0%,100%,0.1);
+    --black: #000;
+    --white: #fff;
+    --dada: #dadada;
+    --purple-primary: #3460f5;
+    --primary-bg: #192f60;
+    /* Màu nền header  */
+    --layout-bg: #061d50;
+    /* Bg màu ở phần tổng quan */
+    --alpha-layout-bg: #637191;
+    /* Boder bottom */
+    --border-secondary: hsla(0,0%,100%,0.05);
+    --song-item-action: hsla(0,0%,100%,0.5);
+    --bg--bottom:  #051740;
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container::-webkit-scrollbar {
+    width: 4px;
+} 
+.container::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(117deg,#af0a78,#5a035a 102%);
+    border-radius: 2px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container::-webkit-scrollbar-track {
+   border-radius: 2px;
+   background-color: rgb(214, 223, 141);
 }
-
-.App-link {
-  color: #61dafb;
+.container {
+    background-repeat: no-repeat;
+    background-size: 1920px auto;
+    height: calc(100vh - 70px);
+    overflow: auto;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main {
+    margin-left: 240px;
+    padding: 0 60px;
+    margin-top: 70px;
+    /* height: 1000vh; */
 }

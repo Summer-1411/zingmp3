@@ -1,0 +1,139 @@
+/* Navbar */
+.navbar {
+    width: 240px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--sidebar-bg1);
+    height: calc(100vh - 70px);
+}
+.navbar a {
+    text-decoration: none;
+    color: var(--dada);
+    font-family: sans-serif;
+    font-size: 13px;
+
+}
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+.navbar-logo {
+   
+    width:240px;
+    height: 70px;
+    display: flex;
+    padding: 0 25px 0 28px;
+    align-items: center;
+}
+.logo-zingmp3 {
+    display: block;
+    width: 120px;
+    height: 40px;
+    background-image: url(https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.nav-list {
+    margin-bottom: 15px;
+}
+.navbar-item.active {
+    background-color:  var(--alpha-bg1);
+    border-left: 3px solid var(--purple-primary);
+}
+.navbar-item.active a {
+   color: var(--white);
+
+}
+.navbar-item:hover a {
+    color: var(--white);
+    cursor: pointer;
+}
+.navbar-item-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    font-weight: 200; 
+}
+.navbar-item-link {
+    display: flex;
+    align-items: center;
+    padding: 5px 25px;
+}
+.solid {
+    border-top: 1px solid var(--alpha-bg1);
+    margin: auto;
+    width: calc(240px - 50px);
+}
+
+
+.subnav {
+    margin-top: 20px;
+    height: 285px;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+.subnav::-webkit-scrollbar {
+    width: 4px;
+} 
+.subnav::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(117deg,#af0a78,#5a035a 102%);
+    border-radius: 2px;
+}
+.subnav::-webkit-scrollbar-track {
+   border-radius: 2px;
+   background-color: rgb(214, 223, 141);
+}
+
+
+.update_vip {
+    margin: 10px 20px;
+    padding: 25px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    text-align: center;
+    background-image: linear-gradient(117deg,#5a4be7,#c86dd7 102%);
+}
+.update_vip .vip-text {
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.btn-vip {
+    padding: 6px 35px;
+    background-color: #ffdb00;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.update_vip .btn-vip:hover {
+    opacity: 0.8;
+}
+.subnav-libery-heading {
+    padding: 0 28px 8px;
+    font-size: 12px;
+    color: var(--white);
+}
+.subnav-libery-link {
+    padding: 8px 25px;
+    display: flex;
+    align-items: center;
+}
+.subnav-libery-title {
+    margin-left: 10px;
+}
+
+
+.create-play-list-new {
+    position: fixed;
+    bottom: 90px;
+    left: 0;
+    width: 240px;
+    line-height: 65px;
+    font-size: 14px;
+    color: var(--white);
+    border-top: 1px solid var(--alpha-bg1);
+    /* background-color: var(--sidebar-bg1); */
+    padding: 0 28px;
+}

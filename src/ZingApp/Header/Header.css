@@ -1,0 +1,216 @@
+.heading {
+    height: 70px;
+    width: calc(100% - 240px);
+    position: fixed;
+    background-color: var(--layout-bg);
+    top: 0;
+    right: 0;
+    z-index: 100;
+}
+.heading-main {
+    height: 100%;
+    padding: 0 60px;
+    display: flex;
+
+    align-items: center;
+    color: var(--white);
+}
+
+.heading-main .content-heading-left {
+    display: flex;
+    align-items: center;
+    line-height: 40px;
+    flex: 1;
+}
+
+.content-heading-input-search {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    position: relative;
+}
+.content-heading-left i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+.content-heading-input-search {
+    width: 540px;
+    background-color: var(--primary-bg);
+    border-radius: 30px;
+
+}
+.content-heading-input-search-icon {
+    z-index: 2;
+}
+.content-heading-input-search-icon i {
+    font-size: 18px;
+    margin: 0 10px;
+    
+}
+.content-heading-input-search .input-heading-search {
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: transparent;
+    color: var(--white);
+    z-index: 2;
+}
+/* Lịch sử tìm kiếm */
+.history-search {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 6px 0 rgb(32 33 36 / 28%);
+    top: 0;
+    padding: 13px 10px;
+    background-color: var(--primary-bg);
+    padding-top: 50px;
+    border-radius: 20px;
+    display: none;
+    z-index: 1;
+}
+
+.history-search.flex {
+    display: block;
+}
+.history-search-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.offer-search {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 10px 8px;
+}
+.history-search-item {
+    display: flex;
+    align-items: center;
+}
+.history-search-item i {
+    font-size: 16px;
+}
+.history-search-item .history-item-link {
+    color: var(--white);
+    font-size: 14px;
+    text-decoration: none;
+}
+.content-heading-right {
+    display: flex;
+    align-items: center;
+    line-height: 40px;
+}
+.content-heading-right-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    background-color: var(--sidebar-bg1);
+}
+.content-heading-right-avt {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-left: 10px;
+    background-image:url(../img/avatar_jisoo.jpg);
+    background-size: contain;
+}
+.overflow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--alpha-bg1);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.Exit-select-bg {
+    cursor: pointer;
+}
+.overflow.display {
+    display: flex;
+}
+.select-backgound {
+    width: 900px;
+    border-radius: 10px;
+    max-height: 50vh;
+    min-height: 500px;
+    overflow: auto;
+    background-color: var(--primary-bg);
+    /* padding:0 20px; */
+}
+
+.select-background-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 76px;
+    font-size: 24px;
+    padding: 20px 30px;
+    color: var(--white);
+}
+.select-background-main {
+    padding: 0 30px;
+    height: calc(500px - 76px);
+    overflow: auto;
+}
+
+
+.main-title-1 {
+    color: var(--white);
+    font-size: 18px;
+    display: flex;
+}
+
+.content-item-box {
+    height: 83.6px; 
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+}
+.content-item-image {
+    width: 100%;
+    height: 83.6px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: all 0.3s linear;
+}
+.content-item-image:hover {
+    transform: scale(1.1);
+}
+.apply {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: var(--purple-primary);
+    font-size: 12px;
+    color: var(--white);
+    line-height: 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    display: none;
+}
+.apply:hover {
+    background-color: red;
+}
+.col:hover .apply {
+    display: block;
+}
+.content-item-name {
+    font-size: 12px;
+    color: var(--white);
+}

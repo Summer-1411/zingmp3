@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import {GlobalState} from './ZingApp/GlobalState'
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <GlobalState>
+        <App />
+      </GlobalState>
+      
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
