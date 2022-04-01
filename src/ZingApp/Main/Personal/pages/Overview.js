@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { StateContext } from '../../../GlobalState';
-import { Route, Routes, Link } from 'react-router-dom';
-import imgSong1 from '../../../img/img_song1.jpg'
+import {  Link, Outlet } from 'react-router-dom';
+//import imgSong1 from '../../../img/img_song1.jpg'
 import listMusic from '../ListMusic';
-import MainStt2 from './MainStt2';
-function MainStt1(){
+//import TheSong from './TheSong';
+function Overview(){
     const context = useContext(StateContext);
     //const [index, setIndex, display] = useContext(StateContext);
    const handleClickItem = (id) => {
@@ -15,7 +15,7 @@ function MainStt1(){
             <div className="main-stt1-heading">
                 <div className="header-sound">Bài Hát</div>
                 <div className="main-stt1-switch">
-                    <Link to ='/music' className="btn case case-all"
+                    <Link to ='music' className="btn case case-all"
                         onClick={() => {context.setPage(1)}}
                     >   
                         TẤT CẢ <i className="bi bi-chevron-right"></i>
@@ -36,7 +36,7 @@ function MainStt1(){
             </div>
             <div className="main-stt1-contain">
                 <div className="main-stt1-img-events">
-                    <img src={imgSong1} alt="" className="img-events index1" />
+                    <img src={listMusic[context.index].avatar} alt="" className="img-events index1" />
                 </div>
                 <div className="main-stt1-song-list">
                     {listMusic.map((value, id) => (
@@ -97,12 +97,13 @@ function MainStt1(){
                     </div>
                 </div>
             </div>
-            <Routes>
+            <Outlet />
+            {/* <Routes>
                 
-                <Route path="/music" element = {<MainStt2 />} />
+                <Route path="/music" element = {<TheSong />} />
                 
-            </Routes>
+            </Routes> */}
         </div>
     )
 }
-export default MainStt1;
+export default Overview;

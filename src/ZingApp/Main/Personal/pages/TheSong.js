@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { StateContext } from '../../../GlobalState';
 import listMusic from '../ListMusic'
-function MainStt2(){
+function TheSong(){
     //const [index, setIndex, display] = useContext(StateContext)
     const context = useContext(StateContext)
     const handleClickItem = (id) => {
@@ -58,4 +58,4 @@ function MainStt2(){
                     </div>
     )
 }
-export default MainStt2;
+export default TheSong;

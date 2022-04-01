@@ -1,15 +1,16 @@
-import { useContext, useEffect, useLayoutEffect } from 'react';
+import { useContext, useLayoutEffect, useRef } from 'react';
 import { StateContext } from '../GlobalState';
-import { memo } from 'react';
 import './Header.css'
 import { useState } from 'react';
 import { avtar_ns, avt_view } from '../setAvatar';
 function Header(){
-    const [history, setHistory] = useState(false)
+    
     document.onclick = function(){
-        setHistory(false)
+        historyRef.current.classList.remove('flex')
     }
-    const [none, setNone] = useState(false);
+    //console.log('re-render-his');
+    const themeBgRef = useRef();
+    const historyRef = useRef();
     const context = useContext(StateContext)
     const [primary, setPrimary] = useState();
     const [bgSearch, setBgSearch] = useState();
@@ -18,14 +19,23 @@ function Header(){
     }, [primary])
     const handleClick = (value) => {
         context.setBackground(value.srcbg)
-        setNone(false)
+        themeBgRef.current.classList.remove('display')
         //console.log(value.bg_header);
         setPrimary(value.bg_header)
         setBgSearch(value.sidebar_bg)
         context.setBgNavbar(value.bottom_bg)
         context.setColorBt(value.color)
     }
-   
+    const handleClickSearch = (e) => {
+        e.stopPropagation()
+        historyRef.current.classList.add('flex')
+    }
+    const handleBgColor = () => {
+        themeBgRef.current.classList.add('display')
+    }
+    const handleClose = () => {
+        themeBgRef.current.classList.remove('display')
+    }
     //const [index, setIndex, display, setDisplay,background, setBackground] = useContext(StateContext)
     
     
@@ -45,12 +55,9 @@ function Header(){
                                 <i className="bi bi-search"></i>
                             </div>
                             <input  type="text" className="input-heading-search" placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV..." 
-                                onClick={(e) => {
-                                    e.stopPropagation()
-                                    
-                                    setHistory(true)}}
+                                onClick={handleClickSearch}
                             />
-                            <div className={history ? "history-search flex" : "history-search"} style={{backgroundColor: `${primary}`}}>
+                            <div ref={historyRef} className="history-search" style={{backgroundColor: `${primary}`}}>
                                 <h3 className="offer-search">Đề xuất cho bạn</h3>
                                 <ul className="history-search-list">
                                     <li className="history-search-item">
@@ -82,16 +89,16 @@ function Header(){
                     </div>
                     <div className="content-heading-right">
                         <div className="content-heading-right-icon" style={{backgroundColor: `${bgSearch}`}}
-                            onClick={() => {setNone(true)}}
+                            onClick={handleBgColor}
                         >
                             <i className="bi bi-mask"></i>
                         </div>    
-                        <div className={none ? "overflow display" : "overflow"}>
+                        <div ref={themeBgRef} className="overflow">
                             <div className="select-backgound" style={{backgroundColor: `${primary}`}}>
                                 <div className="select-background-heading">
                                     <h3 className='heading-text'>Giao diện</h3>
                                     <span className='Exit-select-bg'
-                                        onClick={() => {setNone(false)}}
+                                        onClick={handleClose}
                                     >
                                         <i className="bi bi-x-lg"></i>
                                     </span>
@@ -110,12 +117,7 @@ function Header(){
                                                         </div>
                                                         <div className="apply"
                                                             onClick={() => {
-                                                                handleClick(value)
-                                                                // context.setBackground(value.srcbg)
-                                                               
-                                                                
-                                                                // setNone(false)
-                                                            }}
+                                                                handleClick(value)}}
                                                         >Áp dụng</div>
                                                     </div>
                                                     <span className="content-item-name">{value.name}</span>
@@ -136,11 +138,7 @@ function Header(){
                                                         </div>
                                                         <div className="apply"
                                                             onClick={() => {
-                                                                handleClick(value)
-                                                                // context.setBackground(value.srcbg)
-                                                               
-                                                                // setNone(false)
-                                                            }}
+                                                                handleClick(value)}}
                                                         >Áp dụng</div>
                                                     </div>
                                                     <span className="content-item-name">{value.name}</span>

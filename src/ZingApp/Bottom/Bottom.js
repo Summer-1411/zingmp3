@@ -19,7 +19,7 @@ function Bottom() {
     const repeatBtn = useRef();
     const cdThumb = useRef()
     //const volume = useRef();
-    //const cdThumbAnimate = useRef()
+    const cdThumbAnimate = useRef()
     //const [timeItem, setTimeItem] = useState('');
     const [timeCurent, setTimeCurent] = useState('00:00')
     const context = useContext(StateContext);
@@ -29,11 +29,9 @@ function Bottom() {
     const handleClickPlay = () => {
         audioRef.current.play()
         context.setDisplay(false) 
-
     }
     const handleClickPause = () => {
         audioRef.current.pause()
-
     }
     const handleRepeat = () => {
         setRepeat(!repeat);
@@ -41,27 +39,31 @@ function Bottom() {
     const handleRandom = () => { 
         setRandom(!random) 
     }
-
+    //console.log(cdThumbAnimate.current);
     useEffect(() => {
-        // cdThumbAnimate.current = cdThumb.current.animate({ transform: "rotate(360deg)" }, {
-        //     duration: 10000, // 10 seconds
-        //     iterations: Infinity
-        // });
-        //cdThumbAnimate.current.pause()
+        cdThumbAnimate.current = cdThumb.current.animate({ transform: "rotate(360deg)" }, {
+            duration: 10000, // 10 seconds
+            iterations: Infinity
+        });
+        cdThumbAnimate.current.pause()
+    }, [])
+    useEffect(() => {
+       
+        
         audioRef.current.onplay = function(){
            
             context.setDisplay(true);
             
-            console.log('play');
+            //console.log('play');
            
-            //cdThumbAnimate.current.play()
+             cdThumbAnimate.current.play()
             
         }
         audioRef.current.onpause = function(){
             
             context.setDisplay(false);
            
-            //cdThumbAnimate.current.pause();
+             cdThumbAnimate.current.pause();
             
         }
         audioRef.current.onended = function(){
@@ -206,7 +208,13 @@ function Bottom() {
                             
                         </div>
                         <div className="song-item-properti">
-                            <div className="song-item-properti-name">{listMusic[context.index].name}</div>
+                            <div className="song-item-wrap">
+                                <div className="song-item-name-music">
+                                    <div className="song-name">{listMusic[context.index].name}</div>
+                                    <div className="song-name">{listMusic[context.index].name}</div>
+                                </div>
+
+                            </div>
                             <div className="song-item-properti-single">{listMusic[context.index].single}</div>
                         </div>
                     </div>

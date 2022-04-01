@@ -1,0 +1,108 @@
+.row-title {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.row-main-item {
+    height: 262px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+/* Content */
+.row-main-content {
+    width: 100%;
+    height: 192px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.row-main-content-overflow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    bottom: 0;
+    background-color: transparent;
+    transition:all 0.25s linear ;
+}
+
+.row-main-btn-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--white);
+    opacity: 0;
+    z-index: 2;
+}
+.icon-heart.hidden .heart {
+    display: none;
+}
+.icon-heart.hidden .no-heart {
+    display: block;
+}
+.icon-heart .heart {
+    display: block;
+}
+.icon-heart .no-heart {
+    display: none;
+}
+.row-main-btn {
+    padding:4px 5px 1px 5px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    border-radius: 100%;
+}
+.row-main-btn:hover {
+    background-color:  #c0c4caa1;
+    
+}
+.row-main-image {
+    transition: all 0.25s linear;
+}
+.row-main-content:hover .row-main-image{
+    transform: scale(1.1);
+}
+.row-main-content:hover .row-main-btn-icon {
+    opacity: 1;
+}
+.row-main-content:hover .row-main-content-overflow {
+    background-color: rgba(0, 0, 0, 0.404);
+}
+.row-main-image {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 5px;
+}
+
+
+/* Thông tin row-main */
+.row-main-text {
+    margin-top: 8px;
+    color: var(--white);
+}
+.row-main-text-name {
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.row-main-text-name:hover {
+    color: var(--purple-primary);
+}
+.row-main-text-user {
+    color: #ffffff80;
+    font-size: 12px;
+}

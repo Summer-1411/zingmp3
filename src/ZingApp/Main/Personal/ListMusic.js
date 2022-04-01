@@ -44,7 +44,7 @@ import src18 from '../../asess/src_song/music18.mp3'
 import src19 from '../../asess/src_song/music19.mp3'
 import src20 from '../../asess/src_song/music20.mp3'
 
-const listMusic = [
+const value = [
     {
         avatar: img0,
         name: 'Trou Is A Friend',
@@ -214,5 +214,10 @@ const listMusic = [
         path: src20
     },
 ]
+let listMusic = [...value]
+
 
 export default listMusic
+
+
+

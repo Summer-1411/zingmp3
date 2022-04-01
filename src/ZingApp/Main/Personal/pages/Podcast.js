@@ -1,4 +1,4 @@
-function PODCAST(){
+function Podcast(){
     return (
         <div className="podcast">
             <div className="podcast-icon">
@@ -16,4 +16,4 @@ function PODCAST(){
         </div>
     )
 }
-export default PODCAST
+export default Podcast

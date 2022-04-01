@@ -1,15 +1,11 @@
 import "./Personal.css"
-import {Route, Routes, Link} from 'react-router-dom'
-import MainStt1 from "./pages/MainStt1"
-import MainStt2 from "./pages/MainStt2"
-import PlayList from "./pages/MainStt3"
-import PODCAST from "./pages/MainStt4"
-import { useState, useEffect } from "react"
+import {Link, Outlet} from 'react-router-dom'
+
 import { useContext } from "react"
 import { StateContext } from "../../GlobalState"
 const tab = [
     {
-        to: '/',
+        to: '',
         tabName: 'TỔNG QUAN'
     },
     {
@@ -17,27 +13,28 @@ const tab = [
         tabName: 'BÀI HÁT'
     },
     {
-        to: '/playlist',
+        to: 'playlist',
         tabName: 'PLAYLIST'
     },
     {
-        to: '/podcast',
+        to: 'podcast',
         tabName: 'PODCAST'
     },
     {
-        to: '/',
-        tabName: '...'
+        to: 'album',
+        tabName: 'ALBUM'
     },
+    {
+        to: '',
+        tabName: '...'
+    }
 ]
 function Personal(){
-    //const [page, setPage] = useState(0);
     const context = useContext(StateContext)
-    
     return (
         <div id="personal">
             <div className="user">
                 <div className="select-tab">
-                
                     <div className="btn btn-update">NÂNG CẤP VIP</div>
                     <div className="btn btn-code">NHẬN CODE VIP</div>
                     <div className="btn-dots">...</div>
@@ -48,11 +45,9 @@ function Personal(){
                         
                     </div>
                     <div className="user-main-name">
-                        Thảo Bắp
+                        Summer
                     </div>
                     <span className="user-navbar-contain">
-                    
-                        
                         <div className="user-navbar">
                             {tab.map((value,index) => (
                                 <Link 
@@ -72,17 +67,14 @@ function Personal(){
                     </span>
                 </div>
             </div>
-            <Routes>
-                <Route path="/" element = {<MainStt1 />} />
-                <Route path="/music" element = {<MainStt2 />} />
+            <Outlet />
+            {/* <Routes>
+                <Route path="/" element = {<Overview />} />
+                <Route path="/music" element = {<TheSong />} />
                 <Route path="/playlist" element = {<PlayList />} />
-                <Route path="/podcast" element = {<PODCAST />} />
-            </Routes>
-            
-
-
-            
-
+                <Route path="/podcast" element = {<Podcast />} />
+                <Route path="/album" element = {<Album />} />
+            </Routes> */}
         </div>
     )
 }

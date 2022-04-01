@@ -39,6 +39,9 @@
 .nav-list {
     margin-bottom: 15px;
 }
+.navbar-item {
+    border-left: 3px solid transparent;
+}
 .navbar-item.active {
     background-color:  var(--alpha-bg1);
     border-left: 3px solid var(--purple-primary);

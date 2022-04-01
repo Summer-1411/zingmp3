@@ -1,5 +1,59 @@
+import { useState } from 'react';
+import { Routes, Route, Link, Outlet } from 'react-router-dom';
 import './Navbar.css'
 function Navbar() {
+    const listNavbar = [
+        {
+            path: '/',
+            icon: 'bi bi-music-note-list',
+            text: 'Cá nhân'
+        },
+        {
+            path: '/discover',
+            icon: 'bi bi-record-circle',
+            text: 'Khám phá'
+        },
+        {
+            path: '/zingchat',
+            icon: 'bi bi-bullseye',
+            text: '#Zingchat'
+        },
+        {
+            path: '/radio',
+            icon: 'bi bi-headphones',
+            text: 'Radio'
+        },
+        {
+            path: '/',
+            icon: 'bi bi-emoji-heart-eyes',
+            text: 'Theo dõi'
+        }
+    ]
+
+    const subnav = [
+        {
+            path:'/musicnew',
+            icon: 'bi bi-music-note-beamed',
+            text: 'Nhạc mới',
+        },
+        {
+            path: '/category',
+            icon: 'bi bi-columns-gap',
+            text: 'Thể loại'
+        },
+        {
+            path: '/top100',
+            icon: 'bi bi-star',
+            text: 'Top 100'
+        },
+        {
+            path: '/mv',
+            icon: 'bi bi-collection-play',
+            text: 'MV'
+        }
+    ]
+    const [index, setIndex] = useState(0);
+    const [index1, setIndex1] = useState(-1);
     return (
             <div className="navbar">
                 <div className="navbar-logo">
@@ -8,83 +62,46 @@ function Navbar() {
                 </div>
                 <div className="navbar-container">
                     <ul className="navbar-list">
-                        <li className="navbar-item active">
-                            <a href="/" className="navbar-item-link">
-                                <span className="navbar-item-icon">
-                                    <i className="bi bi-music-note-list"></i>
-                                </span>
-                                <span className="navbar-item-text">Cá nhân</span>
-                            </a>
-                        </li>
-                        <li className="navbar-item">
-                            <a href="/" className="navbar-item-link">
-                                <span className="navbar-item-icon">
-                                    <i className="bi bi-record-circle"></i>
-                                </span>
-                                <span className="navbar-item-text">Khám phá</span>
-                            </a>
-                        </li>
-                        <li className="navbar-item">
-                            <a href="/" className="navbar-item-link">
-                                <span className="navbar-item-icon">
-                                    <i className="bi bi-bullseye"></i>
-                                </span>
-                                <span className="navbar-item-text">#Zingchat</span>
-                            </a>
-                        </li>
-                        <li className="navbar-item">
-                            <a href="/" className="navbar-item-link">
-                                <span className="navbar-item-icon">
-                                    <i className="bi bi-headphones"></i>
-                                </span>
-                                <span className="navbar-item-text">Radio</span>
-                            </a>
-                        </li>
-                        <li className="navbar-item">
-                            <a href="/" className="navbar-item-link">
-                                <span className="navbar-item-icon">
-                                    <i className="bi bi-emoji-heart-eyes"></i>
-                                </span>
-                                <span className="navbar-item-text">Theo dõi</span>
-                            </a>
-                        </li>
+                        {listNavbar.map((value, key) => (
+                            <li 
+                                onClick={() => {
+                                    setIndex(key)
+                                    setIndex1(-1)
+                                }} 
+                                key={key} 
+                                className={key === index ? "navbar-item active" : "navbar-item"}
+                            >
+                                <Link to={value.path} className="navbar-item-link">
+                                    <span className="navbar-item-icon">
+                                        <i className={value.icon}></i>
+                                    </span>
+                                    <span className="navbar-item-text">{value.text}</span>
+                                </Link>
+                            </li>
+                        ))}
                         
                     </ul>
                     <div className="solid"></div>
                     <div className="subnav">
                         <ul className="navbar-list">
-                            <li className="navbar-item">
-                                <a href="/" className="navbar-item-link">
-                                    <span className="navbar-item-icon">
-                                        <i className="bi bi-music-note-beamed"></i>
-                                    </span>
-                                    <span className="navbar-item-text">Nhạc mới</span>
-                                </a>
-                            </li>
-                            <li className="navbar-item">
-                                <a href="/" className="navbar-item-link">
-                                    <span className="navbar-item-icon">
-                                        <i className="bi bi-columns-gap"></i>
-                                    </span>
-                                    <span className="navbar-item-text">Thể loại</span>
-                                </a>
-                            </li>
-                            <li className="navbar-item">
-                                <a href="/" className="navbar-item-link">
-                                    <span className="navbar-item-icon">
-                                        <i className="bi bi-star"></i>
-                                    </span>
-                                    <span className="navbar-item-text">Top 100</span>
-                                </a>
-                            </li>
-                            <li className="navbar-item">
-                                <a href="/" className="navbar-item-link">
-                                    <span className="navbar-item-icon">
-                                        <i className="bi bi-collection-play"></i>
-                                    </span>
-                                    <span className="navbar-item-text">MV</span>
-                                </a>
-                            </li>
+                            {subnav.map((value, key) => (
+                                <li 
+                                    onClick={() => {
+                                        setIndex1(key);
+                                        setIndex(-1);
+                                    }} 
+                                    key={key} 
+                                    className={index1 === key ? "navbar-item active" : "navbar-item"}
+                                >
+                                    <Link to={value.path} className="navbar-item-link">
+                                        <span className="navbar-item-icon">
+                                            <i className={value.icon}></i>
+                                        </span>
+                                        <span className="navbar-item-text">{value.text}</span>
+                                    </Link>
+                                </li>
+                            ))}
+                            
                         </ul>
                         <div className="update_vip">
                             <p className="vip-text">Nghe nhạc không quảng cáo cùng kho nhạc VIP</p>
@@ -121,6 +138,7 @@ function Navbar() {
                         <span className="create-play-list-new-icon"><i className="bi bi-plus"></i></span>
                         Tạo play list mới
                     </h3>
+                    <Outlet />
                 </div>
             </div>
     )
